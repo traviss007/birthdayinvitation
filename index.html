@@ -151,19 +151,18 @@
       font-family:var(--fat);
       font-size:clamp(3.5rem,13vw,11.5rem);
       line-height:.9;letter-spacing:-.01em;
-      background:var(--grad);
-      background-size:300% 300%;
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-      animation:gradMove 6s ease infinite;
     }
     .name-line{display:block;overflow:hidden;}
     .name-inner{
       display:block;
       transform:translateY(110%);
-      animation:slideUp .9s cubic-bezier(.76,0,.24,1) forwards;
+      background:var(--grad);
+      background-size:300% 300%;
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+      animation:slideUp .9s cubic-bezier(.76,0,.24,1) forwards, gradMove 6s ease infinite;
     }
-    .name-line:nth-child(1) .name-inner{animation-delay:.7s;}
-    .name-line:nth-child(2) .name-inner{animation-delay:.85s;}
+    .name-line:nth-child(1) .name-inner{animation-delay:.7s, 0s;}
+    .name-line:nth-child(2) .name-inner{animation-delay:.85s, 0s;}
     @keyframes gradMove{
       0%,100%{background-position:0% 50%;}
       50%{background-position:100% 50%;}
